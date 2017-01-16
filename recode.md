@@ -7,8 +7,7 @@ Match.group() 返回实际匹配的字符串
 
 2. 匹配更多模式
 pattern 中加括号，表示分组
-Match.group(index)可返回相应分组匹配结果 groups获取所有分组
-
+Match.group(index)可返回相应分组匹配结果 groups获取所有分组；
 |：管道，匹配其中一种规则，如：r'Batman|Tina Fey'
 search 查找到第一个匹配立即返回
 Bat(man|mobile|copter)
@@ -33,7 +32,6 @@ r'[aeiouAEIOU]':匹配所以 a e i... 字符
 r'[a-zA-Z0-9]':匹配所有大小写字母和数字；
 []内不会解释正则表达式，其他字符无需转义；
 ^:匹配补集，如：r'[^aeiouAEIOU]'
-
 正则表达式中：
 r'^Hello' 匹配以'Hello'开始的字符串
 r'\d$'匹配以数字结尾的字符串
