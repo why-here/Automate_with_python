@@ -22,3 +22,29 @@ os.path.sep = '\\'
 检测路径是否存在：os.path.exists(path)
 是否是文件：os.path.isfile(path）
 是否是文件夹：os.path.isdir(path)
+
+### 文件读写
+打开文件: open(path) 返回File对象 open(path,'r') open(path, 'w')
+读写文件: File.read() File.write()
+关闭文件: File.close()
+读行: File.readlines()
+open(path, 'w')，写入将覆盖原有内容
+open(path, 'a')，在文本末尾添加内容；
+
+### 利用shelve模块保存变量
+shelfFile = shelve.open('mydata')
+cats = ['Zophie', 'Pooka', 'Simon']
+shelfFile['cats'] = cats
+shelfFile.close()
+
+shelfFile = shelve.open('mydata')
+cats = shelfFile['cats']
+shelfFile.close()
+
+shelfFile = shelve.open('mydata')
+list(shelfFile.keys()) => ['cats']
+list(shelfFile.values()) => ['Zophie', 'Pooka', 'Simon']
+shelfFile.close()
+
+pprint.pformat(var) 将变量转换为字符串格式，以便存储于.py文件中
+
